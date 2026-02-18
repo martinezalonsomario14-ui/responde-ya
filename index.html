@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responde Ya | Más citas, menos espera</title>
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Header con gradiente */
+        .header {
+            background: linear-gradient(135deg, #0A1929 0%, #1a3a5f 100%);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .logo h1 {
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .logo span {
+            color: #4ECDC4;
+            font-weight: 300;
+            font-size: 1rem;
+            display: block;
+        }
+        .social-header a {
+            color: white;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+        .social-header a:hover {
+            background: #4ECDC4;
+            color: #0A1929;
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10,25,41,0.85), rgba(26,58,95,0.85)), url('https://images.unsplash.com/photo-1573164713988-9665fc3f7a7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 5%;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero h2 span {
+            color: #4ECDC4;
+            border-bottom: 3px solid #F7D447;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #4ECDC4;
+            color: #0A1929;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin: 0 10px 10px 0;
+            border: 2px solid #4ECDC4;
+        }
+        .btn:hover {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        .btn-outline:hover {
+            background: #4ECDC4;
+            color: #0A1929;
+            border-color: #4ECDC4;
+        }
+        /* Sección servicios */
+        .servicios {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .servicios h3 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #0A1929;
+            margin-bottom: 3rem;
+        }
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .servicio-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .servicio-card:hover {
+            transform: translateY(-10px);
+        }
+        .servicio-icon {
+            font-size: 3rem;
+            color: #4ECDC4;
+            margin-bottom: 1rem;
+        }
+        .servicio-card h4 {
+            font-size: 1.5rem;
+            color: #0A1929;
+            margin-bottom: 1rem;
+        }
+        .servicio-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        .servicio-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #0A1929;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .servicio-btn:hover {
+            background: #4ECDC4;
+        }
+        /* Sección de contacto con formulario */
+        .contacto {
+            background: linear-gradient(135deg, #0A1929, #1a3a5f);
+            padding: 4rem 5%;
+            color: white;
+        }
+        .contacto h3 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #F7D447;
+        }
+        .contacto-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .contacto-info p {
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+        }
+        .contacto-info i {
+            color: #4ECDC4;
+            margin-right: 10px;
+        }
+        .redes-contacto {
+            margin-top: 2rem;
+        }
+        .redes-contacto a {
+            color: white;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-right: 10px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .redes-contacto a:hover {
+            background: #4ECDC4;
+            color: #0A1929;
+        }
+        .formulario input, .formulario textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-family: inherit;
+        }
+        .formulario textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        .formulario button {
+            background: #4ECDC4;
+            color: #0A1929;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+        .formulario button:hover {
+            background: #F7D447;
+        }
+        /* Footer */
+        .footer {
+            background: #0A1929;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            border-top: 3px solid #4ECDC4;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .contacto-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo">
+            <h1>Responde Ya</h1>
+            <span>Más citas, menos espera</span>
+        </div>
+        <div class="social-header">
+            <a href="https://www.instagram.com/martinezalonsomario14/" target="_blank"><i class="fab fa-instagram"></i> @martinezalonsomario14</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h2>Transformamos tu <span>comunicación digital</span></h2>
+        <p>Automatizamos WhatsApp y creamos webs profesionales para que ningún negocio pierda clientes por no responder a tiempo.</p>
+        <div>
+            <a href="#servicios" class="btn">Descubrir servicios</a>
+            <a href="#contacto" class="btn btn-outline">Solicitar información</a>
+        </div>
+    </div>
+
+    <!-- SERVICIOS -->
+    <div id="servicios" class="servicios">
+        <h3>¿Qué hacemos por tu negocio?</h3>
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <div class="servicio-icon"><i class="fab fa-whatsapp"></i></div>
+                <h4>Automatización WhatsApp</h4>
+                <p>Respuestas automáticas 24/7, confirmación de citas y atención instantánea sin perder ni un cliente.</p>
+                <a href="#contacto" class="servicio-btn">Más info</a>
+            </div>
+            <div class="servicio-card">
+                <div class="servicio-icon"><i class="fas fa-globe"></i></div>
+                <h4>Páginas web profesionales</h4>
+                <p>Diseño moderno, adaptado a móviles y optimizado para convertir visitas en clientes reales.</p>
+                <a href="#contacto" class="servicio-btn">Más info</a>
+            </div>
+            <div class="servicio-card">
+                <div class="servicio-icon"><i class="fas fa-chart-line"></i></div>
+                <h4>Consultoría digital</h4>
+                <p>Te asesoramos para mejorar tu comunicación digital y aumentar tus ventas.</p>
+                <a href="#contacto" class="servicio-btn">Más info</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACTO + FORMULARIO -->
+    <div id="contacto" class="contacto">
+        <h3>📩 ¿Hablamos sobre tu proyecto?</h3>
+        <div class="contacto-container">
+            <div class="contacto-info">
+                <p><i class="fas fa-phone-alt"></i> 617 118 772</p>
+                <p><i class="fas fa-envelope"></i> martinezalonsomario14@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Respuesta en menos de 24h</p>
+                <div class="redes-contacto">
+                    <a href="https://www.instagram.com/martinezalonsomario14/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://wa.me/34617118772" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+            <div class="formulario">
+                <form action="https://formsubmit.co/martinezalonsomario14@gmail.com" method="POST">
+                    <input type="text" name="nombre" placeholder="Tu nombre" required>
+                    <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                    <input type="tel" name="telefono" placeholder="Tu teléfono (opcional)">
+                    <textarea name="mensaje" placeholder="¿Qué necesitas? Cuéntanos tu idea..." required></textarea>
+                    
+                    <!-- Configuración para que llegue bonito al correo -->
+                    <input type="hidden" name="_subject" value="Nueva consulta desde Responde Ya web">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    
+                    <button type="submit">Enviar mensaje <i class="fas fa-paper-plane"></i></button>
+                </form>
+                <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.8;">Te responderemos en menos de 24h</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>© 2026 Responde Ya - Más citas, menos espera</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Badalona - Barcelona</p>
+    </div>
+</body>
+</html>
