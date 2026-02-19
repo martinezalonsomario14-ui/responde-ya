@@ -23,22 +23,35 @@
         /* Header con gradiente */
         .header {
             background: linear-gradient(135deg, #0A1929 0%, #1a3a5f 100%);
-            padding: 1rem 5%;
+            padding: 0.8rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
-        .logo h1 {
-            color: white;
-            font-size: 2rem;
-            font-weight: 700;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        .logo span {
+        .logo-container img {
+            height: 60px;
+            width: auto;
+            border-radius: 10px;
+            background: white;
+            padding: 5px;
+        }
+        .logo-text h1 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .logo-text span {
             color: #4ECDC4;
             font-weight: 300;
-            font-size: 1rem;
+            font-size: 0.9rem;
             display: block;
         }
         .social-header a {
@@ -243,6 +256,9 @@
                 text-align: center;
                 gap: 1rem;
             }
+            .logo-container {
+                flex-direction: column;
+            }
             .hero h2 {
                 font-size: 2rem;
             }
@@ -253,11 +269,15 @@
     </style>
 </head>
 <body>
-    <!-- HEADER -->
+    <!-- HEADER CON LOGO -->
     <div class="header">
-        <div class="logo">
-            <h1>Responde Ya</h1>
-            <span>Más citas, menos espera</span>
+        <div class="logo-container">
+            <!-- AQUÍ VA TU LOGO (asegúrate de que el nombre del archivo sea correcto) -->
+            <img src="logo.png" alt="Responde Ya Logo">
+            <div class="logo-text">
+                <h1>Responde Ya</h1>
+                <span>Más citas, menos espera</span>
+            </div>
         </div>
         <div class="social-header">
             <a href="https://www.instagram.com/martinezalonsomario14/" target="_blank"><i class="fab fa-instagram"></i> @martinezalonsomario14</a>
